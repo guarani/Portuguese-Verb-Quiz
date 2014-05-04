@@ -3,7 +3,13 @@ body {
 	position: relative;
 	height: 100%;
 	padding: 0px;
-	margin: 0px;	
+	margin: 0px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;	
 }
 #header {
 	height: 70px;
@@ -42,6 +48,9 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background: -webkit-linear-gradient(SpringGreen, PaleGreen);
+	background: -o-linear-gradient(SpringGreen, PaleGreen);
+	background: -moz-linear-gradient(SpringGreen, PaleGreen);
+	background: linear-gradient(SpringGreen, PaleGreen);
 }
 #answer li {
 	background-color: Wheat;

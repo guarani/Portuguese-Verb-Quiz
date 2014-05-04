@@ -1,9 +1,9 @@
-var pronouns = ["Eu", "Tu", "Ele/ela/você", "Nós", "Eles/elas/vocês"];
-var json = '[{"verb": "Ser", "conjugations": ["sou", "és", "é", "somos", "são"]}, \
-			    {"verb": "Ter", "conjugations": ["tenho", "tens", "tem", "temos", "têm"]}, \
-				 {"verb": "Ir", "conjugations": ["vou", "vais", "vai", "vamos", "vão"]}, \
-			    {"verb": "Estar", "conjugations": ["estou", "estás", "está", "estamos", "estão"]}, \
-				 {"verb": "Falar", "conjugations": ["falo", "falas", "fala", "falamos", "falam"]}]';
+var pronouns = ["Eu", "Ele/ela/você", "Nós", "Eles/elas/vocês"];
+var json = '[{"verb": "Ser", "conjugations": ["sou", "é", "somos", "são"]}, \
+			    {"verb": "Ter", "conjugations": ["tenho", "tem", "temos", "têm"]}, \
+				 {"verb": "Ir", "conjugations": ["vou", "vai", "vamos", "vão"]}, \
+			    {"verb": "Estar", "conjugations": ["estou", "está", "estamos", "estão"]}, \
+				 {"verb": "Falar", "conjugations": ["falo", "fala", "falamos", "falam"]}]';
 var questions = JSON.parse(json);
 var questionsAnswered = 0;
 var questionsAnsweredCorrectly = 0;
@@ -27,7 +27,7 @@ function askQuestion() {
 		$("#answer > li:nth-child(" + listIndex + ")").html("<span>" + question.conjugations[conjugateIndex] + "</span>");
 	}
 
-	$("#pronoun").text(pronouns[randomNumber(5)]);
+	$("#pronoun").text(pronouns[randomNumber(4)]);
 	$("#verb").text("{" + question.verb + "}");
 }
 
@@ -57,7 +57,7 @@ function randomNumber(range) {
 
 	
 function randomValues() {
-	var numbers = [0, 1, 2, 3, 4];
+	var numbers = [0, 1, 2, 3];
 	return shuffle(numbers);
 };
 
