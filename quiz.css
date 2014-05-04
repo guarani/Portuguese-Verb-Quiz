@@ -1,0 +1,68 @@
+body {
+	font-family: "Arial Black", Gadget, sans-serif;
+	position: relative;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;	
+}
+#header {
+	height: 70px;
+	background-color: Salmon;
+	width: 100%;
+}
+#pronoun {
+	color: DarkSlateGrey;
+	margin: 0px;
+	width: 70%;
+	float: left;
+	padding-left: 5%;
+}
+#verb {
+	color: DarkSlateBlue;
+	margin: 0px;
+	width: 70%;
+	float: left;
+	padding-left: 5%;
+}
+#score {
+	float: right;
+	margin: 0px;
+	padding-right: 5%;
+	width: 20%;
+	font-family: courier;
+	color: DarkRed;
+}
+#answer {
+	position: absolute;
+	top: 70px;	
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	background: -webkit-linear-gradient(SpringGreen, PaleGreen);
+}
+#answer li {
+	background-color: Wheat;
+	text-align: center;
+	height: 16.66%;
+	line-height: 16.66%;
+	width: 90%;
+	margin: 5px auto;
+	display: table;
+	border-radius: 10px;
+	font-size: 24px;
+	color: SaddleBrown;
+}
+#answer li:nth-child(odd) {
+	background-color: SandyBrown;
+}
+#answer li:last-child {
+	margin-top: 5px;
+	padding-top: 5px;
+}
+#answer span {
+	display: table-cell;
+	vertical-align: middle;
+} 
