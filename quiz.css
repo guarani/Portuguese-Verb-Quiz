@@ -1,3 +1,6 @@
+html {
+	font-size: 16px;
+}
 body {
 	font-family: "Arial Black", Gadget, sans-serif;
 	position: relative;
@@ -75,3 +78,31 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 } 
+.side-menu {
+	position: fixed;
+	background-color: blue;
+	z-index: 1;
+}
+#side-menu-content {
+	top: 0rem;
+	bottom: 0rem;
+	left: 0rem;
+	width: 50%;
+	list-style: none;
+	padding: 0rem;
+	margin: 0rem;
+	font-size: 1.5rem;
+	text-align: center;
+}
+#side-menu-content > li {
+	height: 25%;
+	line-height: 25%;
+}
+#side-menu-handle {
+	top: 35%;
+	bottom: 35%;
+	left: 50%;
+	width: 1rem;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}

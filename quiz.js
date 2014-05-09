@@ -15,6 +15,34 @@ $(function() {
 		updateScore($(this).text());
 		askQuestion();
 	});
+	
+	$(function() {
+		var duration = 500;
+		$('.side-menu').on("touchstart", function(event) {
+			if ($('#side-menu-content').width()) {
+				$('#side-menu-handle').animate({
+					'left': '0%'	
+				},
+				duration);
+				  
+				$('#side-menu-content').animate({
+					'width': '0%'
+				},
+				duration);	
+			} else {
+				$('#side-menu-handle').animate({
+					'left': '50%'	
+				},
+				duration);
+		
+				$('#side-menu-content').animate({
+					'width': '50%'
+				},
+				duration);	
+			}
+			return false;
+		});
+	});
 });
 
 function askQuestion() {
