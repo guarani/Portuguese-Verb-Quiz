@@ -30,18 +30,58 @@ var questionsAnsweredCorrectly = 0;
 // The current verb type to use.
 var verbEndingSelected = 'ir';
 
-
+// Used to store the current mapping of pronouns to congugations.
 var answers = {};
 
 /**
  Called when the document is ready.
  */
 $(function() {
+    // The duration of time that the menu takes to open or close.
+    var menuAnimationDurationMS = 500;
+
     // Present a new question to the user.
 	askQuestion();
 
+    // A click handler to allow the user to select the verb ending from the side menu.
+	$("#side-menu > li").on("click", function() {
+        // Slide the menu handle over to the left.
+        $('#side-menu-handle').animate({'left': '0%'}, menuAnimationDurationMS);
+            
+        // Close the menu by setting its width to 0.
+        $('#side-menu').animate(
+            {'width': '0%'},
+            menuAnimationDurationMS,	
+            function() { 
+                $('#side-menu').css({'display': 'none'});
+            }
+        );
+
+        // Set the ver ending.
+        if ($(this).index() == 0) 
+        {
+           verbEndingSelected = 'er'; 
+        }
+        if ($(this).index() == 1) 
+        {
+           verbEndingSelected = 'ar'; 
+        }
+        if ($(this).index() == 2) 
+        {
+           verbEndingSelected = 'ir'; 
+        }
+        if ($(this).index() == 3) 
+        {
+           verbEndingSelected = '*'; 
+        }
+
+        // Present a new question.
+        askQuestion();
+    });
+
+
     // A click handler for when the user selects an answer.
-	$("li").on("click", function() {
+	$("#answer > li").on("click", function() {
         // Update the score if the answer is correct.
 		updateScore($(this).text());
         
@@ -49,44 +89,19 @@ $(function() {
 		askQuestion();
 	});
 	
-    // The duration of time that the menu takes to open or close.
-    var menuAnimationDurationMS = 500;
-
-    // Add a touch event handler to the menu so that we know when the user touches it.
-	$('.side-menu').on("touchstart", function(event) {
-        
-        // If the menu is open.
-        if ($('#side-menu-content').width()) {
-            // Slide the menu handle over to the left.
-            $('#side-menu-handle').animate({
-                'left': '0%'},
-                menuAnimationDurationMS,
-                function() { 
-                    $('#side-menu-content').css({'display': 'none'});
-                }
-            );
-            
-            // Close the menu by setting its width to 0.
-            $('#side-menu-content').animate(
-                {'width': '0%'},
-                menuAnimationDurationMS);	
-            
-        }
-        // If the menu is closed.
-        else
-        {
+    // Add a touch event handler to the side menu handle so that we know when the user touches it to open it.
+	$('#side-menu-handle').on("touchstart", function(event) {
+        // Only when the side menu handle is in the closed position do we want to do anything. 
+        var left = parseInt($(this).css('left'), 10);
+        if (left == 0) {
             // Slide the menu handle out.
-            $('#side-menu-handle').animate(
-                {'left': '50%'},
-                menuAnimationDurationMS);
+            $(this).animate({'left': '50%'}, menuAnimationDurationMS);
             
             // Open the menu by increasing its width.
-            $('#side-menu-content').css({'display': 'inline'});
-            $('#side-menu-content').animate(
-                {'width': '50%'},
-                menuAnimationDurationMS);
+            $('#side-menu').css({'display': 'inline'});
+            $('#side-menu').animate({'width': '50%'}, menuAnimationDurationMS);
         }
-
+        
         // Prevent default behaviour.
         return false;
     });
@@ -100,7 +115,7 @@ function askQuestion() {
 	question = questions[randomNumber(questions.length)];
 
     // Here we look randomly for the first question matching the currently selected verb termination (e.g. 'ir')
-	if (verbEndingSelected) {
+	if (verbEndingSelected && verbEndingSelected != '*') {
         // The verb termination is the last two characters of the verb.
 		while (question.verb.indexOf(verbEndingSelected) != (question.verb.length - 2)) {
 			question = questions[randomNumber(questions.length)];
