@@ -14,6 +14,40 @@ body {
 	-ms-user-select: none;
 	user-select: none;	
 }
+
+/* The side menu. */
+.side-menu {
+	position: fixed;
+	background-color: blue;
+	z-index: 1;
+}
+#side-menu-content {
+	top: 0rem;
+	bottom: 0rem;
+	left: 0rem;
+	width: 0%;
+	list-style: none;
+	padding: 0rem;
+	margin: 0rem;
+	font-size: 1.5rem;
+	text-align: center;
+	display: none;
+}
+#side-menu-content > li {
+	height: 3rem;
+	line-height: 3rem;
+	border-bottom: 1px solid red;
+}
+#side-menu-handle {
+	top: 35%;
+	bottom: 35%;
+	left: 0%;
+	width: 1rem;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+
+/* The header. */
 #header {
 	background-color: Salmon;
 	position: relative;
@@ -34,6 +68,8 @@ body {
 	bottom: 0px;
 	right: 0px;
 }
+
+/* The answer buttons. */
 #answer {
 	position: absolute;
 	top: 2.75rem;	
@@ -71,33 +107,4 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 } 
-.side-menu {
-	position: fixed;
-	background-color: blue;
-	z-index: 1;
-}
-#side-menu-content {
-	top: 0rem;
-	bottom: 0rem;
-	left: 0rem;
-	width: 0%;
-	list-style: none;
-	padding: 0rem;
-	margin: 0rem;
-	font-size: 1.5rem;
-	text-align: center;
-	display: none;
-}
-#side-menu-content > li {
-	height: 3rem;
-	line-height: 3rem;
-	border-bottom: 1px solid red;
-}
-#side-menu-handle {
-	top: 35%;
-	bottom: 35%;
-	left: 0%;
-	width: 1rem;
-	border-top-right-radius: 1rem;
-	border-bottom-right-radius: 1rem;
-}
+
