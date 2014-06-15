@@ -16,27 +16,27 @@ body {
 }
 #header {
 	background-color: Salmon;
-	position:relative;
-	height:3rem;
+	position: relative;
+	height: 2.75rem;    /* 44px */
 }
 #pronoun {
 	color: DarkSlateGrey;
-	text-align:center;
+	text-align: center;
 }
 #verb {
 	color: DarkSlateBlue;
-	text-align:center;
+	text-align: center;
 }
 #score {
 	color: DarkRed;
 	font-family: courier;
-	position:absolute;
-	bottom:0px;
-	right:0px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
 }
 #answer {
 	position: absolute;
-	top: 70px;	
+	top: 2.75rem;	
 	right: 0px;
 	left: 0px;
 	bottom: 0px;
@@ -51,13 +51,13 @@ body {
 #answer li {
 	background-color: Wheat;
 	text-align: center;
-	height: 16.66%;
-	line-height: 16.66%;
+	height: 2.75rem;
+	line-height: 2.75rem;
 	width: 90%;
-	margin: 5px auto;
+	margin: 0.5rem auto;
 	display: table;
-	border-radius: 10px;
-	font-size: 24px;
+	border-radius: 0.5rem;
+	font-size: 1.5rem;
 	color: SaddleBrown;
 }
 #answer li:nth-child(odd) {
