@@ -1,16 +1,28 @@
 var pronouns = ["Eu", "Ele/ela/você", "Nós", "Eles/elas/vocês"];
-var json = '[{"verb": "Ser", "conjugations": ["sou", "é", "somos", "são"]}, \
-			    {"verb": "Ter", "conjugations": ["tenho", "tem", "temos", "têm"]}, \
-				 {"verb": "Ir", "conjugations": ["vou", "vai", "vamos", "vão"]}, \
-			    {"verb": "Estar", "conjugations": ["estou", "está", "estamos", "estão"]}, \
-				 {"verb": "Falar", "conjugations": ["falo", "fala", "falamos", "falam"]}]';
+var json = '[{"verb": "Ser", 			"conjugations": ["sou", 		"é", 			"somos", 		"são"			]}, \
+			    {"verb": "Ter", 			"conjugations": ["tenho", 		"tem", 		"temos", 		"têm"			]}, \
+				 {"verb": "Ir",  			"conjugations": ["vou", 		"vai", 		"vamos", 		"vão"			]}, \
+			    {"verb": "Estar", 		"conjugations": ["estou", 		"está", 		"estamos",		"estão"		]}, \
+				 {"verb": "Falar", 		"conjugations": ["falo", 		"fala", 		"falamos", 		"falam"		]}, \
+			    {"verb": "Cantar", 		"conjugations": ["canto", 		"canta", 	"cantamos",		"cantam"		]}, \
+			    {"verb": "Chamar", 		"conjugations": ["chamo", 		"chama", 	"chamamos",		"chamam"		]}, \
+			    {"verb": "Nadar", 		"conjugations": ["nado", 		"nada", 		"nadamos",		"nadam"		]}, \
+			    {"verb": "Vender", 		"conjugations": ["vendo", 		"vende", 	"vendemos",		"vendem"		]}, \
+			    {"verb": "Correr", 		"conjugations": ["corro", 		"corre", 	"corremos",		"correm"		]}, \
+			    {"verb": "Beber", 		"conjugations": ["bebo", 		"bebe", 		"bebemos",		"bebem"		]}, \
+			    {"verb": "Comer", 		"conjugations": ["como", 		"come", 		"comemos",		"comem"		]}, \
+			    {"verb": "Abrir", 		"conjugations": ["abro", 		"abre", 		"abremos",		"abrem"		]}, \
+			    {"verb": "Partir", 		"conjugations": ["parto", 		"parte", 	"partimos",		"partem"		]}]';
+
 var questions = JSON.parse(json);
 var questionsAnswered = 0;
 var questionsAnsweredCorrectly = 0;
+var verbEndingSelected = 'ir';
 var answers = {};
 
 $(function() {
 	askQuestion();
+
 	$("li").on("click", function() {
 		updateScore($(this).text());
 		askQuestion();
@@ -23,7 +35,8 @@ $(function() {
 				$('#side-menu-handle').animate({
 					'left': '0%'	
 				},
-				duration);
+				duration,
+				function(){$('#side-menu-content').css({'display': 'none'});});
 				  
 				$('#side-menu-content').animate({
 					'width': '0%'
@@ -34,11 +47,12 @@ $(function() {
 					'left': '50%'	
 				},
 				duration);
-		
+				
+				$('#side-menu-content').css({'display': 'inline'});
 				$('#side-menu-content').animate({
 					'width': '50%'
 				},
-				duration);	
+				duration);
 			}
 			return false;
 		});
@@ -47,6 +61,12 @@ $(function() {
 
 function askQuestion() {
 	question = questions[randomNumber(questions.length)];
+	if (verbEndingSelected) {
+		while (question.verb.indexOf(verbEndingSelected) != (question.verb.length - 2)) {
+			question = questions[randomNumber(questions.length)];
+		}
+	}
+
 	setAnswers(question.conjugations);
 	var randomArray = randomValues();
 	for (var i = 0; i < randomArray.length; i++) {

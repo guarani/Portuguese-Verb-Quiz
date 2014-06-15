@@ -5,8 +5,8 @@ body {
 	font-family: "Arial Black", Gadget, sans-serif;
 	position: relative;
 	height: 100%;
-	padding: 0px;
-	margin: 0px;
+	padding: 0rem;
+	margin: 0rem;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -15,31 +15,24 @@ body {
 	user-select: none;	
 }
 #header {
-	height: 70px;
 	background-color: Salmon;
-	width: 100%;
+	position:relative;
+	height:3rem;
 }
 #pronoun {
 	color: DarkSlateGrey;
-	margin: 0px;
-	width: 70%;
-	float: left;
-	padding-left: 5%;
+	text-align:center;
 }
 #verb {
 	color: DarkSlateBlue;
-	margin: 0px;
-	width: 70%;
-	float: left;
-	padding-left: 5%;
+	text-align:center;
 }
 #score {
-	float: right;
-	margin: 0px;
-	padding-right: 5%;
-	width: 20%;
-	font-family: courier;
 	color: DarkRed;
+	font-family: courier;
+	position:absolute;
+	bottom:0px;
+	right:0px;
 }
 #answer {
 	position: absolute;
@@ -87,21 +80,23 @@ body {
 	top: 0rem;
 	bottom: 0rem;
 	left: 0rem;
-	width: 50%;
+	width: 0%;
 	list-style: none;
 	padding: 0rem;
 	margin: 0rem;
 	font-size: 1.5rem;
 	text-align: center;
+	display: none;
 }
 #side-menu-content > li {
-	height: 25%;
-	line-height: 25%;
+	height: 3rem;
+	line-height: 3rem;
+	border-bottom: 1px solid red;
 }
 #side-menu-handle {
 	top: 35%;
 	bottom: 35%;
-	left: 50%;
+	left: 0%;
 	width: 1rem;
 	border-top-right-radius: 1rem;
 	border-bottom-right-radius: 1rem;
