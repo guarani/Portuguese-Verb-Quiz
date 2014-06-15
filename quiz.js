@@ -1,17 +1,18 @@
 var pronouns = ["Eu", "Ele/ela/você", "Nós", "Eles/elas/vocês"];
-var json = '[{"verb": "Ser", 			"conjugations": ["sou", 		"é", 			"somos", 		"são"			]}, \
-			    {"verb": "Ter", 			"conjugations": ["tenho", 		"tem", 		"temos", 		"têm"			]}, \
-				 {"verb": "Ir",  			"conjugations": ["vou", 		"vai", 		"vamos", 		"vão"			]}, \
-			    {"verb": "Estar", 		"conjugations": ["estou", 		"está", 		"estamos",		"estão"		]}, \
-				 {"verb": "Falar", 		"conjugations": ["falo", 		"fala", 		"falamos", 		"falam"		]}, \
+
+var json = '[{"verb": "Ser", 			"conjugations": ["sou", 		"é", 	    "somos", 		"são"			]}, \
+			    {"verb": "Ter", 	    "conjugations": ["tenho", 		"tem", 		"temos", 		"têm"			]}, \
+		        {"verb": "Ir",  		"conjugations": ["vou", 		"vai", 		"vamos", 		"vão"			]}, \
+			    {"verb": "Estar", 		"conjugations": ["estou", 		"está", 	"estamos",		"estão"	    	]}, \
+			    {"verb": "Falar", 		"conjugations": ["falo", 		"fala", 	"falamos", 		"falam"	    	]}, \
 			    {"verb": "Cantar", 		"conjugations": ["canto", 		"canta", 	"cantamos",		"cantam"		]}, \
 			    {"verb": "Chamar", 		"conjugations": ["chamo", 		"chama", 	"chamamos",		"chamam"		]}, \
-			    {"verb": "Nadar", 		"conjugations": ["nado", 		"nada", 		"nadamos",		"nadam"		]}, \
+			    {"verb": "Nadar", 		"conjugations": ["nado", 		"nada", 	"nadamos",		"nadam"	    	]}, \
 			    {"verb": "Vender", 		"conjugations": ["vendo", 		"vende", 	"vendemos",		"vendem"		]}, \
 			    {"verb": "Correr", 		"conjugations": ["corro", 		"corre", 	"corremos",		"correm"		]}, \
-			    {"verb": "Beber", 		"conjugations": ["bebo", 		"bebe", 		"bebemos",		"bebem"		]}, \
-			    {"verb": "Comer", 		"conjugations": ["como", 		"come", 		"comemos",		"comem"		]}, \
-			    {"verb": "Abrir", 		"conjugations": ["abro", 		"abre", 		"abremos",		"abrem"		]}, \
+			    {"verb": "Beber", 		"conjugations": ["bebo", 		"bebe", 	"bebemos",		"bebem"		    ]}, \
+			    {"verb": "Comer", 		"conjugations": ["como", 		"come", 	"comemos",		"comem"	    	]}, \
+			    {"verb": "Abrir", 		"conjugations": ["abro", 		"abre", 	"abremos",		"abrem" 		]}, \
 			    {"verb": "Partir", 		"conjugations": ["parto", 		"parte", 	"partimos",		"partem"		]}]';
 
 var questions = JSON.parse(json);
