@@ -1,0 +1,38 @@
+<!-- A Portuguse verb quiz. -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<!--<script src="jquery-2.0.3.js"></script>-->
+		<script src="quiz.js"></script>
+		<link rel="stylesheet" type="text/css" href="quiz.css"></style>
+	</head>
+	<body>
+        <!-- The side menu. -->
+		<ul class="side-menu-common" id="side-menu">
+			<li>-ER</li>
+			<li>-AR</li>
+			<li>-IR</li>
+			<li>Tudo</li>
+		</ul>
+        <div id="side-menu-window">
+            <div class="side-menu-common" id="side-menu-handle"></div>
+        </div>
+
+        <!-- The header. -->
+		<div id="header">
+			<div id="pronoun"></div>	
+			<div id="verb"></div>
+			<div id="score">Q1/20</div>
+		</div>
+        
+        <!-- The answer buttons. -->
+		<ul id="answer">
+			<li>{{ conjugation.singularFirst }}</li>
+			<li>{{ conjugation.singularThird }}</li>
+			<li>{{ conjugation.pluralFirst   }}</li>
+			<li>{{ conjugation.pluralThird   }}</li>
+		</ul>	
+	</body>
+</html>

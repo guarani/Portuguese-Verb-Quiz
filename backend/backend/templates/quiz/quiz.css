@@ -1,0 +1,114 @@
+html {
+	font-size: 16px;
+}
+body {
+	font-family: "Arial Black", Gadget, sans-serif;
+	position: relative;
+	height: 100%;
+	padding: 0rem;
+	margin: 0rem;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;	
+}
+
+/* The side menu. */
+.side-menu-common {
+	position: fixed;
+	background-color: blue;
+	z-index: 1;
+}
+#side-menu {
+	top: 0rem;
+	bottom: 0rem;
+	left: 0rem;
+	width: 0%;
+	list-style: none;
+	padding: 0rem;
+	margin: 0rem;
+	font-size: 1.5rem;
+	text-align: center;
+	display: none;
+}
+#side-menu > li {
+	height: 3rem;
+	line-height: 3rem;
+	border-bottom: 1px solid red;
+}
+#side-menu-handle {
+	top: 35%;
+	bottom: 35%;
+	left: 0%;
+	width: 1rem;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+#side-menu-window {
+     
+    display: none;
+}
+
+/* The header. */
+#header {
+	background-color: Salmon;
+	position: relative;
+	height: 2.75rem;    /* 44px */
+}
+#pronoun {
+	color: DarkSlateGrey;
+	text-align: center;
+}
+#verb {
+	color: DarkSlateBlue;
+	text-align: center;
+}
+#score {
+	color: DarkRed;
+	font-family: courier;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+/* The answer buttons. */
+#answer {
+	position: absolute;
+	top: 2.75rem;	
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	background: -webkit-linear-gradient(SpringGreen, PaleGreen);
+	background: -o-linear-gradient(SpringGreen, PaleGreen);
+	background: -moz-linear-gradient(SpringGreen, PaleGreen);
+	background: linear-gradient(SpringGreen, PaleGreen);
+}
+#answer li {
+	background-color: Wheat;
+	text-align: center;
+	height: 2.75rem;
+	line-height: 2.75rem;
+	width: 90%;
+	margin: 0.5rem auto;
+	display: table;
+	border-radius: 0.5rem;
+	font-size: 1.5rem;
+	color: SaddleBrown;
+}
+#answer li:nth-child(odd) {
+	background-color: SandyBrown;
+}
+#answer li:last-child {
+	margin-top: 5px;
+	padding-top: 5px;
+}
+#answer span {
+	display: table-cell;
+	vertical-align: middle;
+} 
+
